@@ -1,0 +1,67 @@
+.ProductCard {
+  border: 0.1rem solid lightgrey;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductCard__image_wrapper {
+  padding: 1rem;
+}
+
+.ProductCard__label_wrapper {
+  min-height: 2rem;
+}
+
+.ProductCard__label {
+  text-transform: capitalize;
+  background-color: red;
+  width: 30%;
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.ProductCard__title {
+  color: black;
+}
+
+.ProductCard__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 100%;
+}
+
+.ProductCard__description {
+  padding: 2rem 0;
+}
+
+.ProductCard__price {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+
+.ProductCard__price p {
+  margin: 0;
+}
+
+.ProductCard__price_label {
+  padding-right: 0.5rem;
+  display: flex;
+  align-self: center;
+}
+
+.ProductCard__price_value {
+  font-size: 1.5em;
+}
+
+.ProductCard__cta {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+  border: 0.5rem solid lightgreen;
+}

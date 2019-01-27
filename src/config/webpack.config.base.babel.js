@@ -18,7 +18,8 @@ export default {
     resolve: {
         modules: ['client', 'common', 'node_modules'],
         alias: {
-            components: path.resolve(__dirname, '../components')
+            components: path.resolve(__dirname, '../components'),
+            images: path.resolve(__dirname, '../images')
         }
     },
 
@@ -28,6 +29,10 @@ export default {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['url-loader']
             }
         ]
     },

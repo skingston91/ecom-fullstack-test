@@ -1,4 +1,28 @@
 body {
-    background-color: #FFFFFF;
-    color: #888888;
+  background-color: #ffffff;
+  color: #888888;
+}
+
+.HomePage__products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .HomePage__products {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .HomePage__products {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+p,
+h2 {
+  margin: 0;
 }

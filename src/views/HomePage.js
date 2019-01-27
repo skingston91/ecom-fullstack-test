@@ -8,13 +8,19 @@ import ProductCard from '../components/ProductCard/index.js';
 // TODO Spilt out the button logic
 // TOOD if cba to fix resolvers for the JSX loading
 
+// const getImage = name => {
+//     return import(`../${name}`).then(({ default: url }) => {
+//         return url;
+//     });
+// };
+
 class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             error: null,
             isLoaded: false,
-            images: []
+            data: []
         };
     }
 
@@ -41,15 +47,17 @@ class HomePage extends Component {
         const { data, isLoaded, error } = this.state;
         return (
             <div className="HomePage">
-                <h1 className="HomePage"> Home Page</h1>
+                <h1 className="HomePage__title"> Home Page</h1>
                 {!isLoaded && <h2> Loading...</h2>}
                 {isLoaded && error && <h2> Error</h2>}
-                {isLoaded &&
-                    !error &&
-                    data &&
-                    data.map(product => (
-                        <ProductCard key={product.title} {...product} />
-                    ))}
+                <div className="HomePage__products">
+                    {isLoaded &&
+                        !error &&
+                        data &&
+                        data.map(product => (
+                            <ProductCard key={product.title} {...product} />
+                        ))}
+                </div>
             </div>
         );
     }
