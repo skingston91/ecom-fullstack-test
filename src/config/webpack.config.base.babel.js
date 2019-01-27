@@ -6,12 +6,8 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
     entry: {
-        'vendor': [
-            'react',
-            'react-dom',
-            'react-router'
-        ],
-        'client': path.resolve(__dirname, '../init/', 'client.js')
+        vendor: ['react', 'react-dom', 'react-router'],
+        client: path.resolve(__dirname, '../init/', 'client.js')
     },
 
     output: {
@@ -20,24 +16,20 @@ export default {
     },
 
     resolve: {
-        modules: [
-            'client',
-            'common',
-            'node_modules'
-        ],
+        modules: ['client', 'common', 'node_modules'],
         alias: {
-            'components': path.resolve(__dirname, '../components')
+            components: path.resolve(__dirname, '../components')
         }
     },
 
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: [
-                'babel-loader'
-            ]
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            }
+        ]
     },
 
     plugins: [
@@ -46,13 +38,15 @@ export default {
         }),
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production')
             }
         }),
-        new CopyWebpackPlugin([{
-            context: './src/',
-            from: 'images/**/*'
-        }]),
+        new CopyWebpackPlugin([
+            {
+                context: './src/',
+                from: 'images/**/*'
+            }
+        ]),
         new HtmlWebpackPlugin({
             filename: '../src/views/layout/partials/embeds.hbs',
             template: 'src/views/layout/partials/embeds.template.html',
