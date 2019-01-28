@@ -3,10 +3,11 @@ import '../stylesheets/listingPage.scss';
 import ProductCard from '../components/ProductCard/index.js';
 
 // TODO add snapshot jest test
-// TODO add productcard styling
+// TODO add image sizing
 // TODO add 404 fail page
 // TODO Spilt out the button logic
 // TOOD if cba to fix resolvers for the JSX loading
+// TOOD fix dynamic image loading
 
 // const getImage = name => {
 //     return import(`../${name}`).then(({ default: url }) => {

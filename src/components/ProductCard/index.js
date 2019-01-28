@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import './styles.scss';
 
-// import defaultImage from '../../images/product.jpg';
+import defaultImage from '../../images/product.jpg';
 
 const ProductCard = ({
     cta,
@@ -24,12 +24,12 @@ const ProductCard = ({
     // console.log(imagePath);
     return (
         <div className="ProductCard">
-            {image && image.image && (
+            {image && image.path && (
                 <div className="ProductCard__image_wrapper">
                     <img
                         className="ProductCard__image"
                         // src={image.path || defaultImage}
-                        // src={defaultImage}
+                        src={defaultImage}
                         alt={image.alt}
                     />
                 </div>
